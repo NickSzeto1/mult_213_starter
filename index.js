@@ -1,3 +1,4 @@
+import { sandbox } from './sandbox.js';
 import { prompt, cleanUp } from './input.js';
 import { singlePlayerGame } from './game.js';
 import { demo_play_10_games } from './tests.js';
@@ -48,6 +49,9 @@ async function main() {
                 } else {
                     console.log(`Could not find data for pokemon: ${pokemonName}`);
                 }
+                break;
+            case "sandbox":
+                await sandbox();
                 break;
             default:
                 console.log("What are you even trying to do? Type 'h' for help.");
